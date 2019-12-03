@@ -1,0 +1,35 @@
+{
+  "name": "mongo-scraper",
+  "version": "1.0.0",
+  "description": "mongoosedb web scraper",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js"
+  },
+  "author": "Matthew Michael",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.3",
+    "mongoose": "^5.3.16",
+    "morgan": "^1.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthewemichael/mongo-scraper.git"
+  },
+  "keywords": [
+    "web",
+    "scraper",
+    "mongo",
+    "mongodb",
+    "scraper"
+  ],
+  "bugs": {
+    "url": "https://github.com/matthewemichael/mongo-scraper/issues"
+  },
+  "homepage": "https://github.com/matthewemichael/mongo-scraper#readme"
+}
