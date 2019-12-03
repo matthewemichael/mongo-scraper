@@ -3,13 +3,27 @@ $.getJSON("/articles", function(data) {
   // For each one
   for (var i = 0; i < data.length; i++) {
     // Display the apropos information on the page
-    $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
+    $("#articles").append(`
+    <div class="col-sm-6 d-flex" style="margin-bottom:50px;">
+      <div class="card">
+        <div class="card-header">
+          <p data-id=${data[i]._id}> ${data[i].title}</p>
+        </div>
+        <div class="card-body">
+          ${data[i].link}
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-primary view-notes" type="button" data-target="#noteModal" data-toggle="modal" data-id=${data[i]._id}>View Notes</button>
+        </div>
+      </div>
+    </div>
+    `);
   }
 });
 
 
 // Whenever someone clicks a p tag
-$(document).on("click", "p", function() {
+$(document).on("click", ".view-notes", function() {
   // Empty the notes from the note section
   $("#notes").empty();
   // Save the id from the p tag
@@ -63,7 +77,7 @@ $(document).on("click", "#savenote", function() {
       // Log the response
       console.log(data);
       // Empty the notes section
-      $("#notes").empty();
+      $("#notes").text("Note Successfully Saved")
     });
 
   // Also, remove the values entered in the input and textarea for note entry
