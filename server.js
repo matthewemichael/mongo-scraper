@@ -124,6 +124,10 @@ app.post("/articles/delete/:id", function(req, res) {
   });
 });
 
+app.get("/save", function (req, res) {
+  res.sendFile(__dirname + '/public/saved.html');
+});
+
 app.get("/saved", function(req, res) {
 
   db.Article
