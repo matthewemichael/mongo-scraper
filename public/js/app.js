@@ -10,7 +10,7 @@ $.getJSON("/articles", function(data) {
           <p data-id=${data[i]._id}> ${data[i].title}</p>
         </div>
         <div class="card-body">
-          ${data[i].link}
+          <a href="${data[i].link}" target="_blank">View Article</a>
         </div>
         <div class="card-footer">
           <button type="button" class="btn btn-success save" data-id=${data[i]._id}>Save Article</button>

@@ -29,6 +29,10 @@ app.use(express.static("public"));
 // Connect to the Mongo DB
 mongoose.connect("mongodb://localhost/webScraper", { useNewUrlParser: true });
 
+// If deployed, use the deployed database.  Otherwise use the local webScraper database
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/webScraper";
+mongoose.connect(MONGODB_URI);
+
 // Routes
 
 app.get("/", function (req, res) {

@@ -9,7 +9,7 @@ $.getJSON("/saved", function(data) {
             <p data-id=${data[i]._id}> ${data[i].title}</p>
           </div>
           <div class="card-body">
-            ${data[i].link}
+            <a href="${data[i].link}" target="_blank">View Article</a>
           </div>
           <div class="card-footer">
             <button class="btn btn-primary view-notes" type="button" data-target="#noteModal" data-toggle="modal" data-id=${data[i]._id}>View Notes</button>
@@ -44,7 +44,7 @@ $.ajax({
 })
 });
 
-// Whenever someone clicks a p tag
+// Whenever someone clicks view noted button
 $(document).on("click", ".view-notes", function() {
 // Empty the notes from the note section
 $("#notes").empty();
