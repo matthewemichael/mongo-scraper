@@ -35,6 +35,8 @@ textarea {
     width: 100%;
 }
 
-#scrape {
+#scrape,
+#saved,
+#home {
     margin-bottom: 30px;
 }

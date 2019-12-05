@@ -13,15 +13,14 @@ $.getJSON("/articles", function(data) {
           ${data[i].link}
         </div>
         <div class="card-footer">
-          <button class="btn btn-primary view-notes" type="button" data-target="#noteModal" data-toggle="modal" data-id=${data[i]._id}>View Notes</button>
           <button type="button" class="btn btn-success save" data-id=${data[i]._id}>Save Article</button>
-          <button type="button" class="btn btn-danger delete" data-id=${data[i]._id}>Delete</button>
         </div>
       </div>
     </div>
     `);
   }
 });
+
 
 //Handle Save Article button
 $(document).on("click", ".save", function() {
