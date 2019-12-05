@@ -4,7 +4,7 @@ $.getJSON("/articles", function(data) {
   for (var i = 0; i < data.length; i++) {
     // Display the apropos information on the page
     $("#articles").append(`
-    <div class="col-sm-6 d-flex" style="margin-bottom:50px;">
+    <div class="col-sm-12 d-flex" style="margin-bottom:50px;">
       <div class="card">
         <div class="card-header">
           <p data-id=${data[i]._id}> ${data[i].title}</p>
@@ -14,6 +14,8 @@ $.getJSON("/articles", function(data) {
         </div>
         <div class="card-footer">
           <button class="btn btn-primary view-notes" type="button" data-target="#noteModal" data-toggle="modal" data-id=${data[i]._id}>View Notes</button>
+          <button type="button" class="btn btn-success save" data-id=${data[i]._id}>Save Article</button>
+          <button type="button" class="btn btn-danger delete" data-id=${data[i]._id}>Delete</button>
         </div>
       </div>
     </div>
@@ -21,6 +23,27 @@ $.getJSON("/articles", function(data) {
   }
 });
 
+//Handle Save Article button
+$(document).on("click", ".save", function() {
+  var thisId = $(this).attr("data-id");
+  $.ajax({
+      method: "POST",
+      url: "/articles/save/" + thisId
+  }).done(function(data) {
+      window.location = "/"
+  })
+});
+
+//Handle Delete Article button
+$(document).on("click", ".delete", function() {
+  var thisId = $(this).attr("data-id");
+  $.ajax({
+      method: "POST",
+      url: "/articles/delete/" + thisId
+  }).done(function(data) {
+      window.location = "/saved"
+  })
+});
 
 // Whenever someone clicks a p tag
 $(document).on("click", ".view-notes", function() {
