@@ -11,19 +11,18 @@ An app that scrapes articles from echojs.com and lets users save articles and le
 - Notes can be added on saved articles by clicking the "View Notes" button.
 - Saved articles can be deleted by clicking the "Delete" button.
 
-![scraper-demo](/public/images/scraper.gif)
+![scraper-demo](/public/images/scraper2.gif)
 
 
 ## Technologies Used
 - Bootstrap
 - jQuery
-- Node.js
 - Express.js
 - MongoDB
-- Mongoose
-- npm packages
-    - axios
-    - cheerio
-    - express
-    - mongoose
-    - morgan
+- Node.js
+    - Node Packages
+        - axios
+        - cheerio
+        - express
+        - mongoose
+        - morgan
