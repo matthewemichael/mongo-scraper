@@ -3,7 +3,7 @@ body {
 }
 
 #wrapper {
-    width: 960px;
+    max-width: 80vw;
     margin-left: auto;
     margin-right: auto;
     padding-top: 5%;
