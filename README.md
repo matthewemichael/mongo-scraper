@@ -1,5 +1,5 @@
 # Echo JS Article Scraper
-[Check out the App](https://mem-mongo-scraper.herokuapp.com/saved.html)
+[Check out the App](https://mem-mongo-scraper.herokuapp.com/)
 
 ## Overview
 An app that scrapes articles from echojs.com and lets users save articles and leave comments on them.
