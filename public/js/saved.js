@@ -54,7 +54,7 @@ $(document).on("click", ".view-notes", function() {
   // A textarea to add a new note body
   $("#notes").append("<textarea id='bodyinput' name='body'></textarea>");
   // A button to submit a new note, with the id of the article saved to it
-  $("#notes").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
+  $("#notes").append("<button class='btn btn-success' data-id='" + data._id + "' id='savenote'>Save Note</button>");
 
   // If there's a note in the article
   if (data.note) {
@@ -68,11 +68,11 @@ $(document).on("click", ".view-notes", function() {
 
 // When you click the save note button
 $(document).on("click", "#savenote", function() {
-// Grab the id associated with the article from the submit button
-var thisId = $(this).attr("data-id");
+  // Grab the id associated with the article from the submit button
+  var thisId = $(this).attr("data-id");
 
-// Run a POST request to change the note, using what's entered in the inputs
-$.ajax({
+  // Run a POST request to change the note, using what's entered in the inputs
+  $.ajax({
     method: "POST",
     url: "/articles/" + thisId,
     data: {
@@ -81,16 +81,16 @@ $.ajax({
     // Value taken from note textarea
     body: $("#bodyinput").val()
     }
-})
-    // With that done
-    .then(function(data) {
+  })
+  // With that done
+  .then(function(data) {
     // Log the response
     console.log(data);
     // Empty the notes section
     $("#notes").text("Note Successfully Saved")
-    });
+  });
 
-// Also, remove the values entered in the input and textarea for note entry
-$("#titleinput").val("");
-$("#bodyinput").val("");
+  // Also, remove the values entered in the input and textarea for note entry
+  $("#titleinput").val("");
+  $("#bodyinput").val("");
 });

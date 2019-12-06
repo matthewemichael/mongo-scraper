@@ -17,6 +17,8 @@ body {
 
 textarea, input {
     display: block;
+    border-radius: 5px;
+    margin-bottom: 10px;
     width: 100%;
     background-color: #FCF5C7;
 }
@@ -39,4 +41,19 @@ textarea {
 #saved,
 #home {
     margin-bottom: 30px;
+}
+
+#heading {
+    margin-bottom: 30px;
+}
+
+button.close {
+    font-size: 2.5rem;
+    color: red;
+    opacity: 1;
+}
+
+button.close:hover {
+    opacity: 0.75;
+    color: red;
 }
